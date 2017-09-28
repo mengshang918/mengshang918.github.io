@@ -15,17 +15,20 @@
 
 
 
-<meta name="description" content="前端知识分享总结">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://mengshangs29.github.io/tags/index.html">
+<meta name="description" content="express express是啥是个nodejs库，基于npm上中间件。类似koa 特点二次封装，非侵入式，增强型 安装 npm init -y npm install express -D  安装中间件npm i body-parser -D   API 引入模块let express = require(‘express’);let bodyParser = require(‘body-pa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="express&#x2F;multer&#x2F;cookie-parser&#x2F;cookie-session中间件">
+<meta property="og:url" content="http://mengshangs29.github.io/2017/09/28/nodejs/cookie-session中间件/index.html">
 <meta property="og:site_name" content="梦殇S29">
-<meta property="og:description" content="前端知识分享总结">
+<meta property="og:description" content="express express是啥是个nodejs库，基于npm上中间件。类似koa 特点二次封装，非侵入式，增强型 安装 npm init -y npm install express -D  安装中间件npm i body-parser -D   API 引入模块let express = require(‘express’);let bodyParser = require(‘body-pa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-27T09:18:13.965Z">
+<meta property="og:image" content="http://ongvolbtu.bkt.clouddn.com/blog/20170928/172123220.png">
+<meta property="og:image" content="http://ongvolbtu.bkt.clouddn.com/blog/20170928/172233092.png">
+<meta property="og:updated_time" content="2017-09-28T09:50:15.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="前端知识分享总结">
+<meta name="twitter:title" content="express&#x2F;multer&#x2F;cookie-parser&#x2F;cookie-session中间件">
+<meta name="twitter:description" content="express express是啥是个nodejs库，基于npm上中间件。类似koa 特点二次封装，非侵入式，增强型 安装 npm init -y npm install express -D  安装中间件npm i body-parser -D   API 引入模块let express = require(‘express’);let bodyParser = require(‘body-pa">
+<meta name="twitter:image" content="http://ongvolbtu.bkt.clouddn.com/blog/20170928/172123220.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>tags | 梦殇S29</title>
+<title>express/multer/cookie-parser/cookie-session中间件 | 梦殇S29</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,7 +70,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -266,11 +269,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-nodejs/cookie-session中间件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2017-09-27T09:13:17.000Z" itemprop="datePublished">2017-09-27</time>
+      <a href="/2017/09/28/nodejs/cookie-session中间件/" class="article-date">
+      <time datetime="2017-09-28T09:16:56.515Z" itemprop="datePublished">2017-09-28</time>
 </a>
 
 
@@ -285,7 +288,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      express/multer/cookie-parser/cookie-session中间件
     </h1>
   
 
@@ -293,6 +296,10 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+    </div>
+
 
         
         <div class="clearfix"></div>
@@ -302,96 +309,166 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <h2 id="express"><a href="#express" class="headerlink" title="express"></a>express</h2><ol>
+<li>express是啥<br>是个nodejs库，基于npm上中间件。类似koa</li>
+<li>特点<br>二次封装，非侵入式，增强型</li>
+<li>安装<ol>
+<li>npm init -y</li>
+<li>npm install express -D </li>
+<li>安装中间件<br>npm i body-parser -D</li>
+</ol>
+</li>
+<li>API<ul>
+<li>引入模块<br>let express = require(‘express’);<br>let bodyParser = require(‘body-parser’);</li>
+<li>搭建服务器<br>let server = express(); </li>
+<li>监听<br>server.listen(端口号)</li>
+<li>静态页面托管<br>server.use(express.static(‘静态页面文件地址’));</li>
+<li>响应请求<br>server.get/post/use(地址,(req,res)=&gt;{res.send(string|buffer)})；<br><code>注：res.send(字符串/buffer)相当于res.write(string|buffer);res.end();</code><br><code>若地址为/，则地址可省略</code><ul>
+<li>req.query获取get请求<br>获取到的是object</li>
+<li>使用中间件获取post请求<br>let bodyParser = require(‘body-parser’);//引入中间件(中间件是个函数)<br>server.use(bodyParser()); //使用body-parser中间件</li>
+<li>req.method<br>判断是GET请求还是POST请求</li>
+<li>next是个函数，调用下一个相同地址的响应，除了/(如图 3-1)<br><center><img src="http://ongvolbtu.bkt.clouddn.com/blog/20170928/172123220.png" alt="图 3-1 body-parser next"></center></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h2><h3 id="body-parser"><a href="#body-parser" class="headerlink" title="body-parser"></a>body-parser</h3><ol>
+<li>body-parser API<ol>
+<li>搭建服务器<br>let bodyParser = require(‘body-parser’);    //引入body-parser中间件</li>
+<li>获取post数据，限定大小，约定返回数据类xx.urlencoded({limit:xx}) //xx单位为kb<br><code>server.use(bodyParser.urlencoded({limit:5*1024}));</code>//使用body-parser组件将表单限制大小为5M</li>
+<li>获取post数据<br><code>req.body</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="multer"><a href="#multer" class="headerlink" title="multer"></a>multer</h3><ol>
+<li><p>node.js原生文件操作方法</p>
+<ul>
+<li>文件重命名<br>  <code>fs.rename(&#39;当前文件&#39;,&#39;改后的文件名&#39;,(err)=&gt;{});</code></li>
+<li><p>引入path模块(处理文件与目录的路径)</p>
+<ul>
+<li><p><code>path.parse(&#39;c:\\wamp\\xx.png&#39;);</code> 磁盘路径(str -&gt; obj)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//path.parse之后得到的对象格式</span></div><div class="line">&#123;</div><div class="line">   root: <span class="string">'c:\\'</span>, 盘符</div><div class="line">   dir: <span class="string">'c:\\wamp'</span>, 目录</div><div class="line">   base: <span class="string">'xx.png'</span>,  文件名</div><div class="line">   ext: <span class="string">'.png'</span>, 扩展名</div><div class="line">   name: <span class="string">'xx'</span> 	文件，不含扩展名</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>path.join(‘磁盘路径1’,’磁盘路径2’)<br>参数1：<code>__dirname</code> 魔术变量  返回当前文件所在的磁盘路径</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>文件上传<ol>
+<li>前端<br><code>file enctype=&quot;multipart/form-data&quot;</code></li>
+<li>后端<ul>
+<li>使用<code>body-parser</code>中间件(不适合)<br>body-parser 接受 urlencode编码数据 ,数据回来的是字符，所以body-parse不适合文件上传，采用multer</li>
+<li>使用<code>multer</code>中间件<ol>
+<li>let multer  = require(‘multer’);    引入</li>
+<li><code>let objMulter = multer({ dest: &#39;./upload&#39; });</code>    实例化  返回 multer对象(将文件保存到服务器下的upload文件夹中)<br>dest: 指定 保存位置（存到服务器)</li>
+<li><code>app.use(objMulter.any());</code>     any 允许上传任何文件</li>
+<li>req.files获取到上传的文件数组（如图 2-1）<ul>
+<li>fieldname: 表单name名</li>
+<li>originalname: 上传的文件名</li>
+<li>encoding： 编码方式</li>
+<li>mimetype: 文件类型</li>
+<li>buffer: 文件本身</li>
+<li>size：尺寸</li>
+<li>destination: 保存路径</li>
+<li>filename： 保存后的文件名  不含后缀</li>
+<li>path：    保存磁盘路径+保存后的文件名 不含后缀<br><center><img src="http://ongvolbtu.bkt.clouddn.com/blog/20170928/172233092.png" alt="图 2-1 req.files获取到的数组示例"></center></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="cookie-parser-cookie-session"><a href="#cookie-parser-cookie-session" class="headerlink" title="cookie-parser cookie-session"></a>cookie-parser cookie-session</h3><ol>
+<li>如何识别同一个人访问了服务器(用户唯一性判断)<br>http协议，http无状态<ul>
+<li>原理：通过给客户端浏览器保存一些信息(服务器给浏览器写cookie)</li>
+<li>需要中间件cookie-parser cookie-session</li>
+<li>流程<br>浏览器-&gt;服务器-&gt;给浏览器种cookie(服务器保留一份seesionID)-&gt;下次浏览器(带着cookie)-&gt;服务器(利用seesionID和cookie对比)-&gt;返回内容</li>
+<li>cookie-paser<br>let cookieParser = require(‘cookie-parser’);<br>server.use(cookieParser());<ul>
+<li>res.cookie(key,value,{配置}) 给浏览器种cookie</li>
+<li>req.cookie.key 返回cookie(服务器读cookie)</li>
+<li>res.clearCookie(key)  服务器给浏览器删cookie</li>
+</ul>
+</li>
+<li>cookie-session<br>let cookieSession = require(‘cookie-session);<br>server.use(cookieSession({<br>name:’key’,<br>keys:[‘aa’,’bb’],    //用来加密，为了安全，必须存在<br>maxAge:1000*5 //过期时间}<br>));<ul>
+<li>服务器写session<br>req.session.key = value; </li>
+<li>服务器读session<br>req.session.key </li>
+<li>服务器删session<br>req.session.key = undefined;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-<ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/nodejs/">nodejs</a><span class="category-list-count">12</span></li></ul>
-
-<p class="count"></p>
-
-<div class="tags">
-    <a href="/tags/npm/" style="font-size: 16px; color: #808080">npm</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-        已有<span><script>document.write($(".category-list-item").length)</script></span>个分类，
-        共计<span><script>document.write($(".tags > a").length)</script></span>个标签
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/09/28/nodejs/cookie-session中间件/">express/multer/cookie-parser/cookie-session中间件</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">梦殇S29</a></p>
+        <p><span>发布时间:</span>2017-09-28, 17:16:56</p>
+        <p><span>最后更新:</span>2017-09-28, 17:50:15</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/28/nodejs/cookie-session中间件/" title="express/multer/cookie-parser/cookie-session中间件">http://mengshangs29.github.io/2017/09/28/nodejs/cookie-session中间件/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://mengshangs29.github.io/2017/09/28/nodejs/cookie-session中间件/　　作者: 梦殇S29" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/09/28/nodejs/后端渲染页面/">
+                    后端渲染页面
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/09/28/nodejs/nodejs-path模块/">
+                    nodejs-path模块
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#express"><span class="toc-number">1.</span> <span class="toc-text">express</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#中间件"><span class="toc-number">2.</span> <span class="toc-text">中间件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#body-parser"><span class="toc-number">2.1.</span> <span class="toc-text">body-parser</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multer"><span class="toc-number">2.2.</span> <span class="toc-text">multer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie-parser-cookie-session"><span class="toc-number">2.3.</span> <span class="toc-text">cookie-parser cookie-session</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -409,7 +486,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"tags　| 梦殇S29　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"express/multer/cookie-parser/cookie-session中间件　| 梦殇S29　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -428,8 +505,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://mengshangs29.github.io/tags/index.html';
-            this.page.identifier = 'tags/index.html';
+            this.page.url = 'http://mengshangs29.github.io/2017/09/28/nodejs/cookie-session中间件/';
+            this.page.identifier = '2017/09/28/nodejs/cookie-session中间件/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -446,6 +523,26 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/09/28/nodejs/后端渲染页面/" title="上一篇: 后端渲染页面">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/09/28/nodejs/nodejs-path模块/" title="下一篇: nodejs-path模块">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/后端渲染页面/">后端渲染页面</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/cookie-session中间件/">express/multer/cookie-parser/cookie-session中间件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/nodejs-path模块/">nodejs-path模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/ndoe.js/">ndoe.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/nodejs-fs模块/">nodejs-fs模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/npm/">npm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/mongoDB/">mongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/nodejs-url模块/">nodejs-url模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/脚手架/">脚手架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/proxy(代理)/">proxy(代理)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/express-路由（router）/">express-路由（router）</a></li></ul>
 
 
 

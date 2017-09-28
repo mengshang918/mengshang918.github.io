@@ -15,18 +15,17 @@
 
 
 
-<meta name="description" content="npm简写   初始 简写 含义     install i 安装   –save -S 项目依赖   –save-dev -D 开发依赖    npmnpm1 类似 bower yarn 用途安装模块，自动安装依赖，管理包（增、删、更新项目所有包）  npm2 安装环境 全局 任何目录、项目环境下都可以使用 工具类，脚手架   本地 只能在当前目录使用 项目依赖(dependencies) 只能">
-<meta name="keywords" content="npm">
+<meta name="description" content="后端：一个路由就是一个小的服务(server/app)前端：路由就告诉你应该去哪儿  路由操作(简易)  let routerUser = express.Router();//返回路由对象 server.use(‘/user’,routerUser);//响应的处理过程 处理过程: router.get(‘/‘,fn); router.get(‘/1’,fn); router.get(‘/2’,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm">
-<meta property="og:url" content="http://mengshangs29.github.io/2017/09/28/npm/index.html">
+<meta property="og:title" content="express-路由（router）">
+<meta property="og:url" content="http://mengshangs29.github.io/2017/09/28/nodejs/express-路由（router）/index.html">
 <meta property="og:site_name" content="梦殇S29">
-<meta property="og:description" content="npm简写   初始 简写 含义     install i 安装   –save -S 项目依赖   –save-dev -D 开发依赖    npmnpm1 类似 bower yarn 用途安装模块，自动安装依赖，管理包（增、删、更新项目所有包）  npm2 安装环境 全局 任何目录、项目环境下都可以使用 工具类，脚手架   本地 只能在当前目录使用 项目依赖(dependencies) 只能">
+<meta property="og:description" content="后端：一个路由就是一个小的服务(server/app)前端：路由就告诉你应该去哪儿  路由操作(简易)  let routerUser = express.Router();//返回路由对象 server.use(‘/user’,routerUser);//响应的处理过程 处理过程: router.get(‘/‘,fn); router.get(‘/1’,fn); router.get(‘/2’,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-27T08:47:10.071Z">
+<meta property="og:updated_time" content="2017-09-28T08:24:44.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm">
-<meta name="twitter:description" content="npm简写   初始 简写 含义     install i 安装   –save -S 项目依赖   –save-dev -D 开发依赖    npmnpm1 类似 bower yarn 用途安装模块，自动安装依赖，管理包（增、删、更新项目所有包）  npm2 安装环境 全局 任何目录、项目环境下都可以使用 工具类，脚手架   本地 只能在当前目录使用 项目依赖(dependencies) 只能">
+<meta name="twitter:title" content="express-路由（router）">
+<meta name="twitter:description" content="后端：一个路由就是一个小的服务(server/app)前端：路由就告诉你应该去哪儿  路由操作(简易)  let routerUser = express.Router();//返回路由对象 server.use(‘/user’,routerUser);//响应的处理过程 处理过程: router.get(‘/‘,fn); router.get(‘/1’,fn); router.get(‘/2’,">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>npm | 梦殇S29</title>
+<title>express-路由（router） | 梦殇S29</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -79,7 +78,9 @@
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -190,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试标签/">测试标签</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li></ul>
                     </div>
                 </section>
                 
@@ -265,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-npm" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-nodejs/express-路由（router）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/09/28/npm/" class="article-date">
-      <time datetime="2017-09-28T02:09:44.782Z" itemprop="datePublished">2017-09-28</time>
+      <a href="/2017/09/28/nodejs/express-路由（router）/" class="article-date">
+      <time datetime="2017-09-28T07:38:10.042Z" itemprop="datePublished">2017-09-28</time>
 </a>
 
 
@@ -284,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      npm
+      express-路由（router）
     </h1>
   
 
@@ -298,10 +299,6 @@
 
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -309,107 +306,24 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="npm简写"><a href="#npm简写" class="headerlink" title="npm简写"></a>npm简写</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">初始</th>
-<th style="text-align:center">简写</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">install</td>
-<td style="text-align:center">i</td>
-<td style="text-align:center">安装</td>
-</tr>
-<tr>
-<td style="text-align:center">–save</td>
-<td style="text-align:center">-S</td>
-<td style="text-align:center">项目依赖</td>
-</tr>
-<tr>
-<td style="text-align:center">–save-dev</td>
-<td style="text-align:center">-D</td>
-<td style="text-align:center">开发依赖</td>
-</tr>
-</tbody>
-</table>
-<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><h3 id="npm1"><a href="#npm1" class="headerlink" title="npm1"></a>npm1</h3><ol>
-<li>类似 bower yarn</li>
-<li>用途<br>安装模块，自动安装依赖，管理包（增、删、更新项目所有包）</li>
-</ol>
-<h3 id="npm2"><a href="#npm2" class="headerlink" title="npm2"></a>npm2</h3><ol>
-<li>安装环境<ol>
-<li>全局<br> 任何目录、项目环境下都可以使用<ul>
-<li>工具类，脚手架</li>
-</ul>
-</li>
-<li>本地<br> 只能在当前目录使用</li>
-<li>项目依赖(dependencies)<br> 只能在当前项目下使用<ul>
-<li>上线仍需要</li>
-</ul>
-</li>
-<li>开发依赖(devDependencies)<br> 只能在当前项目下使用<ul>
-<li>上线不需要</li>
+        <p>后端：一个路由就是一个小的服务(server/app)<br>前端：路由就告诉你应该去哪儿</p>
+<ol>
+<li><p>路由操作(简易)</p>
+<ol>
+<li>let routerUser = express.Router();//返回路由对象</li>
+<li>server.use(‘/user’,routerUser);//响应的处理过程</li>
+<li>处理过程:<ul>
+<li>router.get(‘/‘,fn);</li>
+<li>router.get(‘/1’,fn);</li>
+<li>router.get(‘/2’,fn);</li>
+<li>router.get(‘/3’,fn);</li>
 </ul>
 </li>
 </ol>
 </li>
-<li>npm指令<ul>
-<li>npm install/uninstall 包名 -g //安装、卸载到全局</li>
-<li>npm install/uninstall 包名 //安装、卸载到本地</li>
-<li>npm imstall 包名1 包名2  //一次安装多个包</li>
-<li>查看已安装<ul>
-<li>npm list //查看当前项目下安装的所有包</li>
-<li>npm outdated //包版本对比(当前版本)</li>
-<li>npm info 包名 //查看当前包所有信息</li>
-</ul>
-</li>
-<li>npm init //创建package.json(初始化npm管理文件)<br>npm init -y //所有默认</li>
-<li>安装到项目依赖<ul>
-<li>npm install 包名 –save </li>
-<li>npm install 包名 -S</li>
-</ul>
-</li>
-<li>安装到开发依赖<ul>
-<li>npm install 包名 –save-dev </li>
-<li>npm install 包名 -D</li>
-</ul>
-</li>
-<li>版本约束<ul>
-<li>^x.x.x 约束主版本，后续找更新</li>
-<li>~x.x.x 保持前两位不变，后续找更新</li>
-<li>*转最新</li>
-<li>x.x.x  定死版本</li>
-</ul>
-</li>
-<li>选择源<ul>
-<li>npm install nrm -g //安装选择源的工具包</li>
-<li>nrm ls //查看所有源</li>
-<li>nrm test //测试所有源</li>
-<li>nrm use 源名 //使用。。源</li>
-</ul>
-</li>
-<li>模块下载(卡顿)超过五分钟<br>ctrl+c-&gt;npm unistall 包名-&gt;npm cache clean清除缓存-&gt;npm install 包名</li>
-<li>查看帮助信息<br>npm -h</li>
-<li>发布模块<ol>
-<li>注册账号</li>
-<li>登录<br>npm login</li>
-<li>创建包目录-&gt;npm init -y -&gt;创建入口-&gt;编写、输出</li>
-<li>npm publish 发布</li>
-<li>npm unpublish 删除<br><code>注：发布操作长时间没做，需到邮箱中确认</code><br><code>123</code></li>
+<li><p>路由操作(常用)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//	1. 主服务（server.js/index.js）</span></div><div class="line"><span class="keyword">let</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">let</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>);</div><div class="line"><span class="keyword">let</span> cookieParser = <span class="built_in">require</span>(<span class="string">'cookie-parser'</span>);</div><div class="line"><span class="keyword">let</span> cookieSession = <span class="built_in">require</span>(<span class="string">'cookie-session'</span>);</div><div class="line"><span class="keyword">let</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</div><div class="line"><span class="keyword">let</span> consolidate = <span class="built_in">require</span>(<span class="string">'consolidate'</span>); <span class="comment">//中间件，管理多个模板引擎</span></div><div class="line"><span class="keyword">let</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</div><div class="line"><span class="keyword">let</span> server = express();</div><div class="line">server.listen(<span class="number">8001</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">true<span class="built_in">console</span>.log(<span class="string">'server is running'</span>);</div><div class="line">&#125;);</div><div class="line">server.use(express.static(<span class="string">'./www'</span>));</div><div class="line">server.use(bodyParser.urlencoded(&#123;<span class="attr">limit</span>:<span class="number">5</span>*<span class="number">1024</span>&#125;));</div><div class="line"><span class="keyword">let</span> objMulter = multer(&#123;<span class="attr">dest</span>:<span class="string">'upload'</span>&#125;);</div><div class="line">server.use(objMulter.any());</div><div class="line">server.set(<span class="string">'views'</span>,<span class="string">'./views'</span>);<span class="comment">//设置模板引擎目录</span></div><div class="line">server.set(<span class="string">'view.engine'</span>,<span class="string">'html'</span>);<span class="comment">//设置输出类型</span></div><div class="line">server.engine(<span class="string">'html'</span>,consolidate.ejs);<span class="comment">//输出与模板匹配</span></div><div class="line"><span class="comment">//cookie session</span></div><div class="line">server.use(cookieParser());</div><div class="line"><span class="comment">// let arr=[];</span></div><div class="line"><span class="comment">// for(let i=0;i&lt;10000;i++)&#123;</span></div><div class="line"><span class="comment">//   arr.push('myse'+Math.random());</span></div><div class="line"><span class="comment">// &#125;</span></div><div class="line">server.use(cookieSession(&#123;</div><div class="line">  keys:[<span class="string">'aa'</span>,<span class="string">'bb'</span>],<span class="comment">//加密</span></div><div class="line">  name:<span class="string">'session'</span>,<span class="comment">//sessionkey为session</span></div><div class="line">  maxAge:<span class="number">1000</span>*<span class="number">10</span><span class="comment">//10秒后过期</span></div><div class="line">&#125;));</div><div class="line"><span class="comment">//创建数据库连接池</span></div><div class="line"><span class="keyword">let</span> db = mysql.createPool(&#123;</div><div class="line">truehost:<span class="string">'localhost'</span>,</div><div class="line">trueuser:<span class="string">'root'</span>,</div><div class="line">truepassword:<span class="string">'123456'</span>,</div><div class="line">truedatabase:<span class="string">'test'</span></div><div class="line">&#125;);</div><div class="line">server.use(<span class="string">'/'</span>,<span class="built_in">require</span>(<span class="string">'./router/home'</span>)(db))</div><div class="line">server.use(<span class="string">'/article'</span>,<span class="built_in">require</span>(<span class="string">'./router/article'</span>)(db));</div><div class="line">server.use(<span class="string">'/column'</span>,<span class="built_in">require</span>(<span class="string">'./router/column'</span>)(db));</div><div class="line">server.use(<span class="string">'/fllow'</span>,<span class="built_in">require</span>(<span class="string">'./router/fllow'</span>)(db));</div><div class="line">server.use(<span class="string">'/user'</span>,<span class="built_in">require</span>(<span class="string">'./router/user'</span>)(db));</div><div class="line">server.use(<span class="string">'/login'</span>,<span class="built_in">require</span>(<span class="string">'./router/login'</span>)(db));</div><div class="line">server.use(<span class="string">'/reg'</span>,<span class="built_in">require</span>(<span class="string">'./router/reg'</span>)(db));</div><div class="line"><span class="comment">//2.新建router文件</span></div><div class="line"><span class="comment">//在router文件中写各个服务模块</span></div><div class="line"><span class="comment">//`column模块`示例：</span></div><div class="line"><span class="keyword">let</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="built_in">module</span>.exports=<span class="function"><span class="keyword">function</span>(<span class="params">db</span>)</span>&#123;</div><div class="line">true<span class="keyword">let</span> router =express.Router(); </div><div class="line">truerouter.get(<span class="string">'/'</span>,(req,res)=&gt;&#123;</div><div class="line">truetrue<span class="keyword">let</span> sql = <span class="string">`select * from news`</span>;</div><div class="line">truetruedb.query(sql,(err,data)=&gt;&#123;</div><div class="line">truetruetrueres.render(<span class="string">'column_m.ejs'</span>,&#123;<span class="attr">news</span>:data&#125;);</div><div class="line">truetrue&#125;)</div><div class="line">true&#125;)</div><div class="line">true<span class="keyword">return</span> router;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
 </ol>
-</li>
-</ul>
-</li>
-</ol>
-<blockquote>
-<p>123</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">123123123</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">    .style1 &#123;</div><div class="line">        margin: 10px auto;</div><div class="line">        background-color: #9999FF;</div><div class="line">        display: block;</div><div class="line">        color: White;</div><div class="line">        border: 1px solid white;</div><div class="line">        padding: 10px 25px;</div><div class="line">        font-size: 18px;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style1:hover &#123;</div><div class="line">        background-color: #66B3FF;</div><div class="line">        cursor: pointer;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style2 &#123;</div><div class="line">        margin: 10px auto;</div><div class="line">        background-color: gray;</div><div class="line">        display: block;</div><div class="line">        color: black;</div><div class="line">        border: 1px solid white;</div><div class="line">        padding: 10px 25px;</div><div class="line">        font-size: 18px;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style2:hover &#123;</div><div class="line">        background-color: black;</div><div class="line">        color: White;</div><div class="line">        cursor: pointer</div><div class="line">    &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;input id=&quot;btnB&quot; type=&quot;button&quot; name=&quot;btnLogin&quot; value=&quot;登录&quot; class=&quot;style1&quot; /&gt;</div><div class="line">        &lt;div id=&quot;tool&quot;&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.style.className】更改样式&quot; onclick=&quot;changeStyle1()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.style.cssText】更改样式&quot; onclick=&quot;changeStyle2()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.className】更改样式&quot; onclick=&quot;changeStyle3()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;更改外联css样式&quot; onclick=&quot;recover()&quot; /&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    function changeStyle1() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.style.backgroundColor = &quot;black&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function changeStyle2() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.style.cssText += &quot;;background-color:black; display:block;color:white&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function changeStyle3() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.className = &quot;style2&quot;;</div><div class="line">        // obj.setAttribute(&quot;class&quot;, &quot;style2&quot;);</div><div class="line">    &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -418,13 +332,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/09/28/npm/">npm</a></p>
+        <p><span>本文标题:</span><a href="/2017/09/28/nodejs/express-路由（router）/">express-路由（router）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">梦殇S29</a></p>
-        <p><span>发布时间:</span>2017-09-28, 10:09:44</p>
-        <p><span>最后更新:</span>2017-09-27, 16:47:10</p>
+        <p><span>发布时间:</span>2017-09-28, 15:38:10</p>
+        <p><span>最后更新:</span>2017-09-28, 16:24:44</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/09/28/npm/" title="npm">http://mengshangs29.github.io/2017/09/28/npm/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://mengshangs29.github.io/2017/09/28/npm/　　作者: 梦殇S29" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/28/nodejs/express-路由（router）/" title="express-路由（router）">http://mengshangs29.github.io/2017/09/28/nodejs/express-路由（router）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://mengshangs29.github.io/2017/09/28/nodejs/express-路由（router）/　　作者: 梦殇S29" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -436,12 +350,12 @@
 
     <nav id="article-nav">
         
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/09/27/hello-world/">
-                    Hello World
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/09/28/nodejs/proxy(代理)/">
+                    proxy(代理)
                 </a>
             </div>
+        
         
     </nav>
 
@@ -451,7 +365,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#npm简写"><span class="toc-number">1.</span> <span class="toc-text">npm简写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm"><span class="toc-number">2.</span> <span class="toc-text">npm</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#npm1"><span class="toc-number">2.1.</span> <span class="toc-text">npm1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm2"><span class="toc-number">2.2.</span> <span class="toc-text">npm2</span></a></li></ol></li></ol>
+            
         
     </div>
     <style>
@@ -487,7 +401,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"npm　| 梦殇S29　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"express-路由（router）　| 梦殇S29　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -506,8 +420,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://mengshangs29.github.io/2017/09/28/npm/';
-            this.page.identifier = '2017/09/28/npm/';
+            this.page.url = 'http://mengshangs29.github.io/2017/09/28/nodejs/express-路由（router）/';
+            this.page.identifier = '2017/09/28/nodejs/express-路由（router）/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -529,19 +443,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/09/28/nodejs/proxy(代理)/" title="上一篇: proxy(代理)">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/09/27/hello-world/" title="下一篇: Hello World">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/npm/">npm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/后端渲染页面/">后端渲染页面</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/cookie-session中间件/">express/multer/cookie-parser/cookie-session中间件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/nodejs-path模块/">nodejs-path模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/ndoe.js/">ndoe.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/nodejs-fs模块/">nodejs-fs模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/npm/">npm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/mongoDB/">mongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/nodejs-url模块/">nodejs-url模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/脚手架/">脚手架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/proxy(代理)/">proxy(代理)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/express-路由（router）/">express-路由（router）</a></li></ul>
 
 
 
@@ -555,7 +469,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2017 梦殇S29
+                2017 梦殇S29
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
@@ -632,6 +546,23 @@
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 梦殇S29博客 " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*)  " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

@@ -15,18 +15,17 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="测试标签">
+<meta name="description" content="用途处理url 使用方法 let url = require(‘url’); url.parse(req.url)req.url获取的是string,parse将其转成对象">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://mengshangs29.github.io/2017/09/27/hello-world/index.html">
+<meta property="og:title" content="nodejs-url模块">
+<meta property="og:url" content="http://mengshangs29.github.io/2017/09/28/nodejs/nodejs-url模块/index.html">
 <meta property="og:site_name" content="梦殇S29">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="用途处理url 使用方法 let url = require(‘url’); url.parse(req.url)req.url获取的是string,parse将其转成对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-27T09:30:45.625Z">
+<meta property="og:updated_time" content="2017-09-28T08:42:32.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="nodejs-url模块">
+<meta name="twitter:description" content="用途处理url 使用方法 let url = require(‘url’); url.parse(req.url)req.url获取的是string,parse将其转成对象">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hello World | 梦殇S29</title>
+<title>nodejs-url模块 | 梦殇S29</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -79,7 +78,9 @@
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -190,7 +191,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试标签/">测试标签</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li></ul>
                     </div>
                 </section>
                 
@@ -265,11 +266,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-nodejs/nodejs-url模块" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/09/27/hello-world/" class="article-date">
-      <time datetime="2017-09-27T08:58:40.126Z" itemprop="datePublished">2017-09-27</time>
+      <a href="/2017/09/28/nodejs/nodejs-url模块/" class="article-date">
+      <time datetime="2017-09-28T07:39:33.360Z" itemprop="datePublished">2017-09-28</time>
 </a>
 
 
@@ -284,7 +285,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      nodejs-url模块
     </h1>
   
 
@@ -293,15 +294,11 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/分类1/">分类1</a>
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
     </div>
 
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试标签/">测试标签</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -309,22 +306,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p><code>注：发布操作长时间没做，需到邮箱中确认</code><br><code>123</code></p>
-<blockquote>
-<p>123</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">123123123</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">    .style1 &#123;</div><div class="line">        margin: 10px auto;</div><div class="line">        background-color: #9999FF;</div><div class="line">        display: block;</div><div class="line">        color: White;</div><div class="line">        border: 1px solid white;</div><div class="line">        padding: 10px 25px;</div><div class="line">        font-size: 18px;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style1:hover &#123;</div><div class="line">        background-color: #66B3FF;</div><div class="line">        cursor: pointer;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style2 &#123;</div><div class="line">        margin: 10px auto;</div><div class="line">        background-color: gray;</div><div class="line">        display: block;</div><div class="line">        color: black;</div><div class="line">        border: 1px solid white;</div><div class="line">        padding: 10px 25px;</div><div class="line">        font-size: 18px;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style2:hover &#123;</div><div class="line">        background-color: black;</div><div class="line">        color: White;</div><div class="line">        cursor: pointer</div><div class="line">    &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;input id=&quot;btnB&quot; type=&quot;button&quot; name=&quot;btnLogin&quot; value=&quot;登录&quot; class=&quot;style1&quot; /&gt;</div><div class="line">        &lt;div id=&quot;tool&quot;&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.style.className】更改样式&quot; onclick=&quot;changeStyle1()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.style.cssText】更改样式&quot; onclick=&quot;changeStyle2()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.className】更改样式&quot; onclick=&quot;changeStyle3()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;更改外联css样式&quot; onclick=&quot;recover()&quot; /&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    function changeStyle1() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.style.backgroundColor = &quot;black&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function changeStyle2() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.style.cssText += &quot;;background-color:black; display:block;color:white&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function changeStyle3() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.className = &quot;style2&quot;;</div><div class="line">        // obj.setAttribute(&quot;class&quot;, &quot;style2&quot;);</div><div class="line">    &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <ol>
+<li>用途<br>处理url</li>
+<li>使用方法<ol>
+<li>let url = require(‘url’);</li>
+<li>url.parse(req.url)<br>req.url获取的是string,parse将其转成对象</li>
+</ol>
+</li>
+</ol>
 
       
     </div>
@@ -333,13 +322,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/09/27/hello-world/">Hello World</a></p>
+        <p><span>本文标题:</span><a href="/2017/09/28/nodejs/nodejs-url模块/">nodejs-url模块</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">梦殇S29</a></p>
-        <p><span>发布时间:</span>2017-09-27, 16:58:40</p>
-        <p><span>最后更新:</span>2017-09-27, 17:30:45</p>
+        <p><span>发布时间:</span>2017-09-28, 15:39:33</p>
+        <p><span>最后更新:</span>2017-09-28, 16:42:32</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/09/27/hello-world/" title="Hello World">http://mengshangs29.github.io/2017/09/27/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://mengshangs29.github.io/2017/09/27/hello-world/　　作者: 梦殇S29" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/28/nodejs/nodejs-url模块/" title="nodejs-url模块">http://mengshangs29.github.io/2017/09/28/nodejs/nodejs-url模块/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://mengshangs29.github.io/2017/09/28/nodejs/nodejs-url模块/　　作者: 梦殇S29" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -352,11 +341,17 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/09/28/npm/">
-                    npm
+                <a href="/2017/09/28/nodejs/mongoDB/">
+                    mongoDB
                 </a>
             </div>
         
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/09/28/nodejs/脚手架/">
+                    脚手架
+                </a>
+            </div>
         
     </nav>
 
@@ -366,7 +361,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            
         
     </div>
     <style>
@@ -402,7 +397,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hello World　| 梦殇S29　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"nodejs-url模块　| 梦殇S29　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -421,8 +416,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://mengshangs29.github.io/2017/09/27/hello-world/';
-            this.page.identifier = '2017/09/27/hello-world/';
+            this.page.url = 'http://mengshangs29.github.io/2017/09/28/nodejs/nodejs-url模块/';
+            this.page.identifier = '2017/09/28/nodejs/nodejs-url模块/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -444,7 +439,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/09/28/npm/" title="上一篇: npm">
+            <a href="/2017/09/28/nodejs/mongoDB/" title="上一篇: mongoDB">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -452,11 +447,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/09/28/nodejs/脚手架/" title="下一篇: 脚手架">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/npm/">npm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/后端渲染页面/">后端渲染页面</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/cookie-session中间件/">express/multer/cookie-parser/cookie-session中间件</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/nodejs-path模块/">nodejs-path模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/ndoe.js/">ndoe.js</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/mysql/">mysql</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/nodejs-fs模块/">nodejs-fs模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/npm/">npm</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/mongoDB/">mongoDB</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/nodejs-url模块/">nodejs-url模块</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/脚手架/">脚手架</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/proxy(代理)/">proxy(代理)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/28/nodejs/express-路由（router）/">express-路由（router）</a></li></ul>
 
 
 
@@ -470,7 +467,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2017 梦殇S29
+                2017 梦殇S29
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
@@ -547,6 +544,23 @@
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 梦殇S29博客 " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*)  " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

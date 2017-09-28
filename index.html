@@ -82,7 +82,9 @@
 </script>
 
 
-    <script> yiliaConfig.jquery_ui = [false]; </script>
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
 
 
 
@@ -193,7 +195,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试标签/">测试标签</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li></ul>
                     </div>
                 </section>
                 
@@ -270,11 +272,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-npm" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nodejs/后端渲染页面" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/09/28/npm/" class="article-date">
-      <time datetime="2017-09-28T02:09:44.782Z" itemprop="datePublished">2017-09-28</time>
+      <a href="/2017/09/28/nodejs/后端渲染页面/" class="article-date">
+      <time datetime="2017-09-28T09:57:19.513Z" itemprop="datePublished">2017-09-28</time>
 </a>
 
 
@@ -289,7 +291,625 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/28/npm/">npm</a>
+      <a class="article-title" href="/2017/09/28/nodejs/后端渲染页面/">后端渲染页面</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p> 渲染引擎:</p>
+<ul>
+<li>jade / ejs / ….</li>
+<li>arttemplate  underscore baiduTemplate mustach …….<br><center><img src="http://ongvolbtu.bkt.clouddn.com/blog/20170928/180057652.png" alt=""></center></li>
+</ul>
+<ol>
+<li>新建views文件</li>
+<li>在views中写jade/ejs文件</li>
+</ol>
+<h2 id="jade中间件-模板引擎"><a href="#jade中间件-模板引擎" class="headerlink" title="jade中间件(模板引擎)"></a>jade中间件(模板引擎)</h2><p>jade文件书写方式（如图 1-1）</p>
+<ul>
+<li>父子元素要缩进</li>
+<li>属性用括号</li>
+<li>样式 li(style={background:’red’,width:’200px’})<br><center><img src="http://ongvolbtu.bkt.clouddn.com/blog/20170928/175727946.png" alt="图 1-1"></center></li>
+</ul>
+<h3 id="jade-API"><a href="#jade-API" class="headerlink" title="jade API"></a>jade API</h3><p>let jade = require(‘jade’);//引擎</p>
+<ol>
+<li>let str = jade.reder(‘html’); //str为 <code>&lt;html&gt;&lt;/html&gt;</code></li>
+<li>let str1 = jade.renderFile(‘jade模板’,{pretty:true});<br>参数1：jade模板位置<br>参数2：输出的html是有格式的</li>
+</ol>
+<hr>
+<h2 id="ejs中间件-模板引擎"><a href="#ejs中间件-模板引擎" class="headerlink" title="ejs中间件(模板引擎)"></a>ejs中间件(模板引擎)</h2><h3 id="ejs-API"><a href="#ejs-API" class="headerlink" title="ejs API"></a>ejs API</h3><p>let ejs = require(‘ejs’);</p>
+<ol>
+<li>ejs.render(str);</li>
+<li>ejs.renderFile(‘ejs模板’,{数据},(err,data)=&gt;{});</li>
+</ol>
+<h3 id="ejs模板语法"><a href="#ejs模板语法" class="headerlink" title="ejs模板语法"></a>ejs模板语法</h3><p>ejs结构就是html<br>输出：&lt;%= 数据名|变量名 %&gt;<br>语句：&lt;% for(){ %&gt;..some code.. &lt;% } %&gt;<br>非转义输出：&lt;%- 数据名|变量名 %&gt;<br>引入模板：&lt;% include 被引入的模板地址 %&gt; //地址不需加引号</p>
+<hr>
+<h2 id="consolidate中间件"><a href="#consolidate中间件" class="headerlink" title="consolidate中间件"></a>consolidate中间件</h2><ol>
+<li>用途<br>管理多个模板引擎</li>
+</ol>
+<h3 id="consolidate-API"><a href="#consolidate-API" class="headerlink" title="consolidate API"></a>consolidate API</h3><ol>
+<li>输出类型设置<br>server.set(‘view.engine’,’[html/css/javascript]’);</li>
+<li>模板引擎目录设置<br>server.set(‘views’,’引擎模板目录’);</li>
+<li>输出与引擎匹配<br>server.engine(‘html’,consoleidate.ejs);<br>server.engine(‘css’,consoleidate.jade);</li>
+<li>渲染API<br>server.use(‘/‘,(req,res,next)=&gt;{<br> res.render(‘模板文件(加后缀),{数据},(err,data)=&gt;{})；//参数3可<br>})</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nodejs/cookie-session中间件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/cookie-session中间件/" class="article-date">
+      <time datetime="2017-09-28T09:16:56.515Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/nodejs/cookie-session中间件/">express/multer/cookie-parser/cookie-session中间件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="express"><a href="#express" class="headerlink" title="express"></a>express</h2><ol>
+<li>express是啥<br>是个nodejs库，基于npm上中间件。类似koa</li>
+<li>特点<br>二次封装，非侵入式，增强型</li>
+<li>安装<ol>
+<li>npm init -y</li>
+<li>npm install express -D </li>
+<li>安装中间件<br>npm i body-parser -D</li>
+</ol>
+</li>
+<li>API<ul>
+<li>引入模块<br>let express = require(‘express’);<br>let bodyParser = require(‘body-parser’);</li>
+<li>搭建服务器<br>let server = express(); </li>
+<li>监听<br>server.listen(端口号)</li>
+<li>静态页面托管<br>server.use(express.static(‘静态页面文件地址’));</li>
+<li>响应请求<br>server.get/post/use(地址,(req,res)=&gt;{res.send(string|buffer)})；<br><code>注：res.send(字符串/buffer)相当于res.write(string|buffer);res.end();</code><br><code>若地址为/，则地址可省略</code><ul>
+<li>req.query获取get请求<br>获取到的是object</li>
+<li>使用中间件获取post请求<br>let bodyParser = require(‘body-parser’);//引入中间件(中间件是个函数)<br>server.use(bodyParser()); //使用body-parser中间件</li>
+<li>req.method<br>判断是GET请求还是POST请求</li>
+<li>next是个函数，调用下一个相同地址的响应，除了/(如图 3-1)<br><center><img src="http://ongvolbtu.bkt.clouddn.com/blog/20170928/172123220.png" alt="图 3-1 body-parser next"></center></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h2><h3 id="body-parser"><a href="#body-parser" class="headerlink" title="body-parser"></a>body-parser</h3><ol>
+<li>body-parser API<ol>
+<li>搭建服务器<br>let bodyParser = require(‘body-parser’);    //引入body-parser中间件</li>
+<li>获取post数据，限定大小，约定返回数据类xx.urlencoded({limit:xx}) //xx单位为kb<br><code>server.use(bodyParser.urlencoded({limit:5*1024}));</code>//使用body-parser组件将表单限制大小为5M</li>
+<li>获取post数据<br><code>req.body</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="multer"><a href="#multer" class="headerlink" title="multer"></a>multer</h3><ol>
+<li><p>node.js原生文件操作方法</p>
+<ul>
+<li>文件重命名<br>  <code>fs.rename(&#39;当前文件&#39;,&#39;改后的文件名&#39;,(err)=&gt;{});</code></li>
+<li><p>引入path模块(处理文件与目录的路径)</p>
+<ul>
+<li><p><code>path.parse(&#39;c:\\wamp\\xx.png&#39;);</code> 磁盘路径(str -&gt; obj)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//path.parse之后得到的对象格式</span></div><div class="line">&#123;</div><div class="line">   root: <span class="string">'c:\\'</span>, 盘符</div><div class="line">   dir: <span class="string">'c:\\wamp'</span>, 目录</div><div class="line">   base: <span class="string">'xx.png'</span>,  文件名</div><div class="line">   ext: <span class="string">'.png'</span>, 扩展名</div><div class="line">   name: <span class="string">'xx'</span> 	文件，不含扩展名</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>path.join(‘磁盘路径1’,’磁盘路径2’)<br>参数1：<code>__dirname</code> 魔术变量  返回当前文件所在的磁盘路径</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>文件上传<ol>
+<li>前端<br><code>file enctype=&quot;multipart/form-data&quot;</code></li>
+<li>后端<ul>
+<li>使用<code>body-parser</code>中间件(不适合)<br>body-parser 接受 urlencode编码数据 ,数据回来的是字符，所以body-parse不适合文件上传，采用multer</li>
+<li>使用<code>multer</code>中间件<ol>
+<li>let multer  = require(‘multer’);    引入</li>
+<li><code>let objMulter = multer({ dest: &#39;./upload&#39; });</code>    实例化  返回 multer对象(将文件保存到服务器下的upload文件夹中)<br>dest: 指定 保存位置（存到服务器)</li>
+<li><code>app.use(objMulter.any());</code>     any 允许上传任何文件</li>
+<li>req.files获取到上传的文件数组（如图 2-1）<ul>
+<li>fieldname: 表单name名</li>
+<li>originalname: 上传的文件名</li>
+<li>encoding： 编码方式</li>
+<li>mimetype: 文件类型</li>
+<li>buffer: 文件本身</li>
+<li>size：尺寸</li>
+<li>destination: 保存路径</li>
+<li>filename： 保存后的文件名  不含后缀</li>
+<li>path：    保存磁盘路径+保存后的文件名 不含后缀<br><center><img src="http://ongvolbtu.bkt.clouddn.com/blog/20170928/172233092.png" alt="图 2-1 req.files获取到的数组示例"></center></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="cookie-parser-cookie-session"><a href="#cookie-parser-cookie-session" class="headerlink" title="cookie-parser cookie-session"></a>cookie-parser cookie-session</h3><ol>
+<li>如何识别同一个人访问了服务器(用户唯一性判断)<br>http协议，http无状态<ul>
+<li>原理：通过给客户端浏览器保存一些信息(服务器给浏览器写cookie)</li>
+<li>需要中间件cookie-parser cookie-session</li>
+<li>流程<br>浏览器-&gt;服务器-&gt;给浏览器种cookie(服务器保留一份seesionID)-&gt;下次浏览器(带着cookie)-&gt;服务器(利用seesionID和cookie对比)-&gt;返回内容</li>
+<li>cookie-paser<br>let cookieParser = require(‘cookie-parser’);<br>server.use(cookieParser());<ul>
+<li>res.cookie(key,value,{配置}) 给浏览器种cookie</li>
+<li>req.cookie.key 返回cookie(服务器读cookie)</li>
+<li>res.clearCookie(key)  服务器给浏览器删cookie</li>
+</ul>
+</li>
+<li>cookie-session<br>let cookieSession = require(‘cookie-session);<br>server.use(cookieSession({<br>name:’key’,<br>keys:[‘aa’,’bb’],    //用来加密，为了安全，必须存在<br>maxAge:1000*5 //过期时间}<br>));<ul>
+<li>服务器写session<br>req.session.key = value; </li>
+<li>服务器读session<br>req.session.key </li>
+<li>服务器删session<br>req.session.key = undefined;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nodejs/nodejs-path模块" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/nodejs-path模块/" class="article-date">
+      <time datetime="2017-09-28T08:53:13.620Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/nodejs/nodejs-path模块/">nodejs-path模块</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>用途<br>引入path模块(处理文件与目录的路径)</p>
+</li>
+<li><p><code>path.parse(&#39;c:\\wamp\\xx.png&#39;);</code>    磁盘路径(str -&gt; obj)</p>
+<pre><code>//path.parse之后得到的对象格式
+{
+    root: &apos;c:\\&apos;, 盘符
+    dir: &apos;c:\\wamp&apos;, 目录
+    base: &apos;xx.png&apos;,  文件名
+    ext: &apos;.png&apos;, 扩展名
+    name: &apos;xx&apos;     文件，不含扩展名
+}
+</code></pre></li>
+<li><code>path.join(&#39;磁盘路径1&#39;,&#39;磁盘路径2&#39;.....)</code><br><center><img src="http://ongvolbtu.bkt.clouddn.com/blog/20170928/171007364.png" alt="path.join方法"></center></li>
+<li><code>__dirname</code> 魔术变量  返回当前文件所在的磁盘路径</li>
+<li>path.resolve([…paths])<br>个人理解：从最右边参数到最左边参数依次拼接，直至有一个参数(string)的前面有/符号，否则一直拼接，如果处理完全部给定的 path 片段后还未生成一个绝对路径，则当前工作目录会被用上<br><code>注：path.resolve()返回当前工作目录的绝对路径</code><br><center><img src="http://ongvolbtu.bkt.clouddn.com/blog/20170928/171126647.png" alt="path.resolve从右往左开始拼接字符串，直至拼成一个绝对路径"></center></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nodejs/ndoe.js" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/ndoe.js/" class="article-date">
+      <time datetime="2017-09-28T08:43:04.502Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/nodejs/ndoe.js/">ndoe.js</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js官网链接</a><br><a href="http://nodejs.cn/" target="_blank" rel="external">node.js中文网</a></p>
+<h2 id="node-js安装使用"><a href="#node-js安装使用" class="headerlink" title="node.js安装使用"></a>node.js安装使用</h2><ol>
+<li>环境：nodejs+web服务器+数据库</li>
+<li>版本：Vx(主).x(子).x(修正)<ul>
+<li>主版本：1/3API发生变化，使用方式变化</li>
+<li>子：API没有删减，使用方式没变化，内部实现发生变化</li>
+<li>修正版：什么都没变，处理一下bug</li>
+</ul>
+</li>
+<li><p>使用</p>
+<ol>
+<li>编写<br>IDE: webstrom hb<br>编辑器：sublime<br>命令行环境下，运行node命令行</li>
+<li><p>运行<br>命令行：dos命令行/linux命令行(git)/node命令行 node 文件名<br>命令行环境下，输入node 回车</p>
+<p><code>注意：不支持dom/BOM ECMA支持</code><br>需要nodejs提供：数据服务，文件服务，web服务</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="web服务器"><a href="#web服务器" class="headerlink" title="web服务器"></a>web服务器</h2><p>web服务器：apache/ngnix/tomact<br>数据库服务器：sqlserver/mysql/mongoDB/oracle<br>后台管理：php/java/nodejs</p>
+<ol>
+<li><p>流程</p>
+<ul>
+<li>nodejs不渲染（大前端）<br>用户-》地址栏(http[s]请求)-》web服务器(收到)-》nodejs处理请求(返回静态、动态)-》请求数据库服务(返回结果)-》nodejs(接收)-》返回前端渲染页面-》浏览器最终渲染</li>
+<li>nodejs渲染（大后端）<br>用户-》地址栏(http[s]请求)-》web服务器(收到)-》nodejs处理请求(返回静态、动态)-》请求数据库服务(返回结果)-》nodejs(接收)-》渲染页面-》浏览器(接收页面，完成最终渲染)</li>
+</ul>
+</li>
+<li><p>nodejs手动搭建web服务器</p>
+<ol>
+<li>引入http模块 require</li>
+<li>server/app =http.createServer</li>
+</ol>
+</li>
+</ol>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><ol>
+<li>系统模块<br>http/fs/querystring/url</li>
+<li>元素<ul>
+<li>require引入模块、输入（后缀.js可不加）<ul>
+<li>不指定路径<br>先找系统模块，再找node_modules(依赖模块)</li>
+<li>指定路径<br>指定./xx/模块名<br>exports导出、输出</li>
+</ul>
+</li>
+<li>module模块<ul>
+<li>moudle.exports==exports</li>
+<li>moudle.exports={<br>自定义属性：值；<br>}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>commonJS是node默认模块方式<br>commonJS是个规范<br>nodejs/webpack是实现</li>
+<li><p>系统模块引入/自定义模块引入</p>
+<ul>
+<li>require(‘’)//引入系统模块<ul>
+<li>可在项目中添加node_modules文件夹</li>
+<li>在node_modulss中写入的模块在外面引入可以不加./</li>
+<li><code>权重：系统模块&gt;node_modules&gt;自定义模块</code></li>
+</ul>
+</li>
+<li>require(‘./….’)引入自定义模块</li>
+<li>对象简写  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">123</span>;</div><div class="line"><span class="keyword">let</span> b = abc;</div><div class="line"><span class="keyword">let</span> c = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">truea:a,</div><div class="line">trueb:b,</div><div class="line">truec:c</div><div class="line">true&#125;</div><div class="line"><span class="comment">//简写为</span></div><div class="line"><span class="keyword">let</span> a = <span class="number">123</span>;</div><div class="line"><span class="keyword">let</span> b = abc;</div><div class="line"><span class="keyword">let</span> c = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">truea,b,c</div><div class="line">true&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>nodejs支持ES6语法，但是不支持es6模块化管理，支持commonJS模块化管理</code></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nodejs/mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/mysql/" class="article-date">
+      <time datetime="2017-09-28T07:40:24.993Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/nodejs/mysql/">mysql</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ol>
+<li>安装mysql两种方法(推荐第二种)<ol>
+<li>安装wamp 开启 mysql服务</li>
+<li>安装mysql 开启服务</li>
+</ol>
+</li>
+<li>库操作<ul>
+<li>客户顿<ol>
+<li>wamp客户端是phpadmin</li>
+<li>mysql 客户端是navicat(收费)</li>
+</ol>
+</li>
+<li>服务端<ol>
+<li>wamp里面mysql(C:\wamp\mysql)</li>
+<li>mysql官网刚下载mysql(C:\Program Files\MySQL)    <h2 id="mysql中间件"><a href="#mysql中间件" class="headerlink" title="mysql中间件"></a>mysql中间件</h2></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>安装mysql中间件<br>npm i mysql -D</li>
+<li><p>连接数据库(推荐方法2)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//方法一：</span></div><div class="line"><span class="keyword">let</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</div><div class="line"><span class="keyword">let</span> db = mysql.createConnection(&#123;</div><div class="line">truehost:<span class="string">'localhost'</span>,<span class="comment">//主机名</span></div><div class="line">trueuser:<span class="string">'root'</span>,<span class="comment">//mysql账号</span></div><div class="line">truepassword:<span class="string">'123456'</span>,<span class="comment">//mysql密码</span></div><div class="line">truedatabase:<span class="string">'test'</span><span class="comment">//mysql数据库</span></div><div class="line">&#125;);</div><div class="line">db.connect();<span class="comment">//连接数据库</span></div><div class="line"><span class="keyword">let</span> str = <span class="string">'select * from user'</span>;</div><div class="line"><span class="keyword">let</span> str1 = <span class="string">'insert into user values(default,"tbl",123)'</span>;</div><div class="line"><span class="comment">//执行sql语句</span></div><div class="line">db.query(str1,(err,data)=&gt;&#123;</div><div class="line">true<span class="built_in">console</span>.log(err);</div><div class="line">true<span class="built_in">console</span>.log(data);</div><div class="line">&#125;)</div><div class="line"><span class="comment">//方法2</span></div><div class="line"><span class="comment">//创建库连接池</span></div><div class="line"><span class="keyword">let</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</div><div class="line"><span class="keyword">let</span> db=mysql.createPool(&#123;</div><div class="line">  host:<span class="string">'localhost'</span>,</div><div class="line">  user:<span class="string">'root'</span>,</div><div class="line">  password:<span class="string">'root123'</span>,</div><div class="line">  database:<span class="string">'2017-8-29'</span>,</div><div class="line">  port:<span class="number">3306</span></div><div class="line">&#125;);</div><div class="line"><span class="keyword">let</span> str = <span class="string">'select * from user'</span>;</div><div class="line"><span class="keyword">let</span> str1 = <span class="string">'insert into user values(default,"tbl",123)'</span>;</div><div class="line"><span class="comment">//执行sql语句</span></div><div class="line">db.query(str1,(err,data)=&gt;&#123;</div><div class="line">true<span class="built_in">console</span>.log(err);</div><div class="line">true<span class="built_in">console</span>.log(data);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>mysql中间件API</p>
+<ol>
+<li>执行sql语句<br>db.query(sql语句,回调(err,data)); <ul>
+<li>err 返回错误信息</li>
+<li>data 数据库数据(array)</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="mysql语句"><a href="#mysql语句" class="headerlink" title="mysql语句"></a>mysql语句</h3><pre><code>增：
+    INSERT INTO 表（字段列表） VALUES (值列表)
+    INSERT INTO user(ID,username,password) VALUES(0,&quot;ppp&quot;,&quot;ppp123&quot;)
+删:
+    DELETE FROM 表 WHERE 字段名=值
+    DELETE FROM user WHERE username=&quot;ppp&quot;
+改:
+    UPDATE 表 SET 字段名=值 WHERE 字段名=值
+    UPDATE user SET username=&quot;uncle9&quot; WHERE username=&quot;alex&quot;
+查:
+    SELECT ? FROM 表
+    ?    ==    字段名    /     字段1,字段2    / *
+    SELECT * FROM user
+    SELECT username,password FROM user
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nodejs/nodejs-fs模块" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/nodejs-fs模块/" class="article-date">
+      <time datetime="2017-09-28T07:40:13.453Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/nodejs/nodejs-fs模块/">nodejs-fs模块</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>let fs = require(‘fs’);</p>
+<ol>
+<li>fs.writeFile(‘路径’,data)<br>想路径中写入data数据</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+    </div>
+
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nodejs/npm" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/npm/" class="article-date">
+      <time datetime="2017-09-28T07:39:59.245Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/nodejs/npm/">npm</a>
     </h1>
   
 
@@ -325,22 +945,20 @@
 </tr>
 </tbody>
 </table>
-<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><h3 id="npm1"><a href="#npm1" class="headerlink" title="npm1"></a>npm1</h3><ol>
+<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><ol>
 <li>类似 bower yarn</li>
 <li>用途<br>安装模块，自动安装依赖，管理包（增、删、更新项目所有包）</li>
-</ol>
-<h3 id="npm2"><a href="#npm2" class="headerlink" title="npm2"></a>npm2</h3><ol>
 <li>安装环境<ol>
-<li>全局<br> 任何目录、项目环境下都可以使用<ul>
+<li>全局<br>任何目录、项目环境下都可以使用<ul>
 <li>工具类，脚手架</li>
 </ul>
 </li>
-<li>本地<br> 只能在当前目录使用</li>
-<li>项目依赖(dependencies)<br> 只能在当前项目下使用<ul>
+<li>本地<br>只能在当前目录使用</li>
+<li>项目依赖(dependencies)<br>只能在当前项目下使用<ul>
 <li>上线仍需要</li>
 </ul>
 </li>
-<li>开发依赖(devDependencies)<br> 只能在当前项目下使用<ul>
+<li>开发依赖(devDependencies)<br>只能在当前项目下使用<ul>
 <li>上线不需要</li>
 </ul>
 </li>
@@ -388,18 +1006,12 @@
 <li>登录<br>npm login</li>
 <li>创建包目录-&gt;npm init -y -&gt;创建入口-&gt;编写、输出</li>
 <li>npm publish 发布</li>
-<li>npm unpublish 删除<br><code>注：发布操作长时间没做，需到邮箱中确认</code><br><code>123</code></li>
+<li>npm unpublish 删除<br><code>注：发布操作长时间没做，需到邮箱中确认</code></li>
 </ol>
 </li>
 </ul>
 </li>
 </ol>
-<blockquote>
-<p>123</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">123123123</div></pre></td></tr></table></figure>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">    .style1 &#123;</div><div class="line">        margin: 10px auto;</div><div class="line">        background-color: #9999FF;</div><div class="line">        display: block;</div><div class="line">        color: White;</div><div class="line">        border: 1px solid white;</div><div class="line">        padding: 10px 25px;</div><div class="line">        font-size: 18px;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style1:hover &#123;</div><div class="line">        background-color: #66B3FF;</div><div class="line">        cursor: pointer;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style2 &#123;</div><div class="line">        margin: 10px auto;</div><div class="line">        background-color: gray;</div><div class="line">        display: block;</div><div class="line">        color: black;</div><div class="line">        border: 1px solid white;</div><div class="line">        padding: 10px 25px;</div><div class="line">        font-size: 18px;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style2:hover &#123;</div><div class="line">        background-color: black;</div><div class="line">        color: White;</div><div class="line">        cursor: pointer</div><div class="line">    &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;input id=&quot;btnB&quot; type=&quot;button&quot; name=&quot;btnLogin&quot; value=&quot;登录&quot; class=&quot;style1&quot; /&gt;</div><div class="line">        &lt;div id=&quot;tool&quot;&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.style.className】更改样式&quot; onclick=&quot;changeStyle1()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.style.cssText】更改样式&quot; onclick=&quot;changeStyle2()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.className】更改样式&quot; onclick=&quot;changeStyle3()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;更改外联css样式&quot; onclick=&quot;recover()&quot; /&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    function changeStyle1() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.style.backgroundColor = &quot;black&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function changeStyle2() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.style.cssText += &quot;;background-color:black; display:block;color:white&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function changeStyle3() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.className = &quot;style2&quot;;</div><div class="line">        // obj.setAttribute(&quot;class&quot;, &quot;style2&quot;);</div><div class="line">    &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -434,11 +1046,11 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nodejs/mongoDB" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/09/27/hello-world/" class="article-date">
-      <time datetime="2017-09-27T08:58:40.126Z" itemprop="datePublished">2017-09-27</time>
+      <a href="/2017/09/28/nodejs/mongoDB/" class="article-date">
+      <time datetime="2017-09-28T07:39:48.884Z" itemprop="datePublished">2017-09-28</time>
 </a>
 
 
@@ -453,7 +1065,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/27/hello-world/">Hello World</a>
+      <a class="article-title" href="/2017/09/28/nodejs/mongoDB/">mongoDB</a>
     </h1>
   
 
@@ -463,22 +1075,120 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p><code>注：发布操作长时间没做，需到邮箱中确认</code><br><code>123</code></p>
-<blockquote>
-<p>123</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">123123123</div></pre></td></tr></table></figure>
+        <ol>
+<li>数据库，nosql（非关系型）</li>
+<li>场景<br>解决大规模数据集合多重数据种类</li>
+<li>新建data/db文件夹<br>在c盘下新建data文件夹，再在data文件夹中新建db文件夹</li>
+<li>在下面文件夹中启动命令行<br>C:\Program Files\MongoDB\Server\3.4\bin</li>
+<li>指定数据存储目录(每次都需要指定)<br>命令行输入  <code>mongod --dbpath c:\data\db</code></li>
+<li>开启服务<br>命令行输入<code>mongod</code></li>
+<li>配置环境变量，使mongod可以在任何地方运行</li>
+<li>开启客户端<br>命令行输入 <code>mongo</code><br>注意：此命令行必须另外开启一个，mongod命令行是一直开启的(为了保障mongoDB服务开启)</li>
+</ol>
 <hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line"></div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">    &lt;style type=&quot;text/css&quot;&gt;</div><div class="line">    .style1 &#123;</div><div class="line">        margin: 10px auto;</div><div class="line">        background-color: #9999FF;</div><div class="line">        display: block;</div><div class="line">        color: White;</div><div class="line">        border: 1px solid white;</div><div class="line">        padding: 10px 25px;</div><div class="line">        font-size: 18px;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style1:hover &#123;</div><div class="line">        background-color: #66B3FF;</div><div class="line">        cursor: pointer;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style2 &#123;</div><div class="line">        margin: 10px auto;</div><div class="line">        background-color: gray;</div><div class="line">        display: block;</div><div class="line">        color: black;</div><div class="line">        border: 1px solid white;</div><div class="line">        padding: 10px 25px;</div><div class="line">        font-size: 18px;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    .style2:hover &#123;</div><div class="line">        background-color: black;</div><div class="line">        color: White;</div><div class="line">        cursor: pointer</div><div class="line">    &#125;</div><div class="line">    &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;input id=&quot;btnB&quot; type=&quot;button&quot; name=&quot;btnLogin&quot; value=&quot;登录&quot; class=&quot;style1&quot; /&gt;</div><div class="line">        &lt;div id=&quot;tool&quot;&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.style.className】更改样式&quot; onclick=&quot;changeStyle1()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.style.cssText】更改样式&quot; onclick=&quot;changeStyle2()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;【obj.className】更改样式&quot; onclick=&quot;changeStyle3()&quot; /&gt;</div><div class="line">            &lt;input type=&quot;button&quot; value=&quot;更改外联css样式&quot; onclick=&quot;recover()&quot; /&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    function changeStyle1() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.style.backgroundColor = &quot;black&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function changeStyle2() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.style.cssText += &quot;;background-color:black; display:block;color:white&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    function changeStyle3() &#123;</div><div class="line">        var obj = document.getElementById(&quot;btnB&quot;);</div><div class="line">        obj.className = &quot;style2&quot;;</div><div class="line">        // obj.setAttribute(&quot;class&quot;, &quot;style2&quot;);</div><div class="line">    &#125;</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line"></div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h2 id="mongoDB"><a href="#mongoDB" class="headerlink" title="mongoDB"></a>mongoDB</h2><ol>
+<li>msyql和mongoDB区分</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">mysql</th>
+<th style="text-align:center">mongoDb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">database(库)</td>
+<td style="text-align:center">database(库)</td>
+</tr>
+<tr>
+<td style="text-align:left">table(表)</td>
+<td style="text-align:center">collection(集合)</td>
+</tr>
+<tr>
+<td style="text-align:left">row(一条数据)</td>
+<td style="text-align:center">document(文档)</td>
+</tr>
+<tr>
+<td style="text-align:left">column(字段)</td>
+<td style="text-align:center">field(区域)</td>
+</tr>
+<tr>
+<td style="text-align:left">用mysql中间件</td>
+<td style="text-align:center">用mongodb中间件</td>
+</tr>
+<tr>
+<td style="text-align:left">返回数组</td>
+<td style="text-align:center">返回对象，需要toArr</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>存储方式:<br> mysql 二维表<br> MongoDB json</p>
+</li>
+<li><p>库操作:</p>
+<ul>
+<li>查<br>show dbs </li>
+<li>查看当前库<br>db </li>
+<li>建<br>use 库名    //没有建，有就切换 </li>
+<li>删<br>db.dropDatabase()  删除当前库</li>
+</ul>
+</li>
+<li>集合(表)操作:<ul>
+<li>建<br><code>db.createCollection(&#39;表名&#39;,{配置})</code><pre><code>配置：{size:文件大小,capped:true,max:条数|文档数} capped定量
+</code></pre></li>
+<li>查<br><code>show collections / db.getCollectionNames()</code></li>
+<li>删<br>db.表|集合.drop()</li>
+</ul>
+</li>
+<li>文档(row)操作:<ul>
+<li>增：<pre><code>db.集合.save({}) / db.集合.insert({})  添加一条
+db.集合.save([{},{}]) / db.集合.insert([{},{}])
+insert  不会替换相同ID    save会
+</code></pre></li>
+<li>删:<pre><code>db.集合.deleteOne({}) db.集合.remove({},true)  一条
+db.集合.remove({要删数据描述}) 多条
+db.集合.remove({}) 清空表
+</code></pre></li>
+<li>改:<pre><code>db.集合.udpate({要替换的数据},{替换后的},bl插入,bl替换)
+替换后的：
+    {\$set:{数据},$inc:{age:1}}
+</code></pre></li>
+<li>查:<pre><code>所有：db.集合.find(条件)
+条数: db.集合.find().count()
+去重：db.集合.distinct(key)
+</code></pre><ul>
+<li>条件<pre><code>{age:22}        age == 22
+{age:{\$gt:22}}    age &gt; 22
+{age:{\$lt:22}}    age &lt; 22
+{age:{\$gte:22}}    age&gt;=22
+{age:{\$lte:22}}    age&lt;=22
+{age:[{\$lte:122},\{\$gte:22}]}age&lt;=122 &amp;&amp; age&gt;=22
+{$or:[{age:22},{age:122}]}    22 or 122
+</code></pre></li>
+<li>限定 (只显示number条)<br>db.集合.find().limit(number)  </li>
+<li>跳过<br>db.集合.find().skip(number)</li>
+<li>查一条<br>db.集合.findOne()/db.集合.find.limit(1)</li>
+<li>排序<br>db.集合.find().sort({key:1/-1})    //1升序，-1降序</li>
+<li>db.集合.find({条件},{指定要显示列区域})<pre><code>指定要显示列区域: 区域名username:1 显示着个区域，其他不显示
+指定要显示列区域: 区域名username:0 不显示着个区域，其他显示
+_id 是默认显示
+</code></pre></li>
+<li>实例<br>db.集合.find({条件},{指定显示区域}).skip(10).limit(10).sort({key:1})</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="nodejs-mongodb中间件"><a href="#nodejs-mongodb中间件" class="headerlink" title="nodejs + mongodb中间件"></a>nodejs + mongodb中间件</h2><ol>
+<li>require(‘mongodb’); 引入模块</li>
+<li>创建客户端    mongoCt = mongodb.MongoClient</li>
+<li>链接库    mongoCt.connect(‘协议://地址:端口/库名’,回调(err,db))</li>
+<li>链接集合（表)    user = db.collection(‘集合名’);</li>
+<li>user.API()  表操作        返回 对象<br>user.API().toArray((err,result)=&gt;{reulst==arr})<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> mongodb = <span class="built_in">require</span>(<span class="string">'mongodb'</span>);</div><div class="line"><span class="keyword">let</span> mongoCt = mongodb.MongoClient;<span class="comment">//创建客户端</span></div><div class="line">mongonCt.connect(<span class="string">'mongodb://127.0.0.1:27017/库名'</span>),(err,db)=&gt;&#123;</div><div class="line">true<span class="comment">//链接集合</span></div><div class="line">true<span class="keyword">let</span> user = db.collection(<span class="string">'user'</span>);</div><div class="line">true<span class="comment">//集合操作</span></div><div class="line">trueuser.insertOne(&#123;&#125;,(err,result)=&gt;&#123;</div><div class="line">truetrue<span class="keyword">if</span>(err)&#123;</div><div class="line">truetruetrue<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>();</div><div class="line">truetrue&#125;<span class="keyword">else</span>&#123;</div><div class="line">truetruetrue...</div><div class="line">truetruetruedb.close();<span class="comment">//关闭库</span></div><div class="line">truetrue&#125;</div><div class="line">true&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -487,15 +1197,148 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/分类1/">分类1</a>
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
     </div>
 
 
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试标签/">测试标签</a></li></ul>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nodejs/nodejs-url模块" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/nodejs-url模块/" class="article-date">
+      <time datetime="2017-09-28T07:39:33.360Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/nodejs/nodejs-url模块/">nodejs-url模块</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li>用途<br>处理url</li>
+<li>使用方法<ol>
+<li>let url = require(‘url’);</li>
+<li>url.parse(req.url)<br>req.url获取的是string,parse将其转成对象</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
     </div>
 
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nodejs/脚手架" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/脚手架/" class="article-date">
+      <time datetime="2017-09-28T07:38:55.542Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/nodejs/脚手架/">脚手架</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>nodejs+express+脚手架+mongodb</p>
+<ol>
+<li>用途<br>自动搭建项目环境，无需手动</li>
+<li>脚手架需要安装到全局<br>npm install express -g<br>npm install express-generator -g<br>在需要初始化的文件夹中express<br>npm i</li>
+<li>使用<br>命令行：脚手架名称 目录 </li>
+</ol>
+<hr>
+<h2 id="supervisor中间件"><a href="#supervisor中间件" class="headerlink" title="supervisor中间件"></a>supervisor中间件</h2><ol>
+<li>用途<br>改动服务代码，自动重启服务<br><code>npm install supervisor -g</code> </li>
+<li>通过运行supervisor启动服务(监听代码改动)<br><code>supervisor ./bin/www</code></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+    </div>
+
+
+      
       
       <div class="clearfix"></div>
     </div>
@@ -514,13 +1357,17 @@
 
   
   
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
 </div>
       <footer id="footer">
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2017 梦殇S29
+                2017 梦殇S29
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
@@ -597,6 +1444,23 @@
         }
     
 </script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 梦殇S29博客 " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*)  " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

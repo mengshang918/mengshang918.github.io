@@ -14,11 +14,14 @@
 <meta name="author" content="梦殇S29" />
 
 
+    
+    
+
 
 <meta name="description" content="前端知识分享总结">
 <meta property="og:type" content="website">
 <meta property="og:title" content="梦殇S29">
-<meta property="og:url" content="http://mengshangs29.github.io/archives/2017/09/index.html">
+<meta property="og:url" content="http://mengshangs29.github.io/page/2/index.html">
 <meta property="og:site_name" content="梦殇S29">
 <meta property="og:description" content="前端知识分享总结">
 <meta property="og:locale" content="zh-Hans">
@@ -52,11 +55,13 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
+    <style> .article { opacity: 0;} </style>
+
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2017/9 | 梦殇S29</title>
+<title>梦殇S29</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -65,9 +70,9 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: false,
+        isHome: true,
         isPost: false,
-        isArchive: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -267,359 +272,159 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-nodejs/proxy(代理)" class="article article-type-post" itemscope itemprop="blogPost">
   
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/proxy(代理)/" class="article-date">
+      <time datetime="2017-09-28T07:38:42.380Z" itemprop="datePublished">2017-09-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/28/nodejs/proxy(代理)/">proxy(代理)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>开放API</p>
+<ul>
+<li>豆瓣开放api</li>
+<li>qq音乐开放api</li>
+<li>。。。。</li>
+</ul>
+</li>
+<li><p>操作</p>
+</li>
+</ol>
+<p><code>注意：必须在后台发送http[s]请求才能获取到，在前台会产生跨域问题</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> </div><div class="line">options=&#123;</div><div class="line">  hostname:<span class="string">'api.douban.com'</span>,</div><div class="line">  port:<span class="number">443</span>,</div><div class="line">  path:<span class="string">'/v2/movie/top250?count='</span>+req.query.count,</div><div class="line">  method:<span class="string">'GET'</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">//发送http[s]请求</span></div><div class="line">http[s].request(配置项,回调(响应对象resHttp))	<span class="comment">//返回请求对象reqHttp</span></div><div class="line">true<span class="comment">//resHttp 响应对象</span></div><div class="line">  <span class="comment">//resHttp.statusCode 状态码  200 OK</span></div><div class="line">  <span class="comment">//resHttp.headers 获取响应头信息</span></div><div class="line">  <span class="comment">//resHttp.setEncoding('utf-8') 设置编码方式</span></div><div class="line">  resHttp.on(<span class="string">'data/end'</span>,fn)</div><div class="line">&#125;);</div><div class="line"><span class="comment">//reqHttp 请求对象</span></div><div class="line">reqHttp.on(<span class="string">'error'</span>,(err)=&gt;&#123;<span class="built_in">console</span>.log(err)&#125;);	<span class="comment">//监听请求失败信息</span></div><div class="line">reqHttp.end();<span class="comment">//请求结束</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/后端渲染页面/" class="archive-article-date">
-      <time datetime="2017-09-28T09:57:19.513Z" itemprop="datePublished">09-28</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/后端渲染页面/">后端渲染页面</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
     </div>
 
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
   </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/cookie-session中间件/" class="archive-article-date">
-      <time datetime="2017-09-28T09:16:56.515Z" itemprop="datePublished">09-28</time>
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-nodejs/express-路由（router）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/28/nodejs/express-路由（router）/" class="article-date">
+      <time datetime="2017-09-28T07:38:10.042Z" itemprop="datePublished">2017-09-28</time>
 </a>
 
 
-        </div>
-         
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/cookie-session中间件/">express/multer/cookie-parser/cookie-session中间件</a>
+      <a class="article-title" href="/2017/09/28/nodejs/express-路由（router）/">express-路由（router）</a>
     </h1>
   
 
-        <div class="article-info info-on-archive">
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
+        <p>后端：一个路由就是一个小的服务(server/app)<br>前端：路由就告诉你应该去哪儿</p>
+<ol>
+<li><p>路由操作(简易)</p>
+<ol>
+<li>let routerUser = express.Router();//返回路由对象</li>
+<li>server.use(‘/user’,routerUser);//响应的处理过程</li>
+<li>处理过程:<ul>
+<li>router.get(‘/‘,fn);</li>
+<li>router.get(‘/1’,fn);</li>
+<li>router.get(‘/2’,fn);</li>
+<li>router.get(‘/3’,fn);</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>路由操作(常用)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//	1. 主服务（server.js/index.js）</span></div><div class="line"><span class="keyword">let</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="keyword">let</span> multer = <span class="built_in">require</span>(<span class="string">'multer'</span>);</div><div class="line"><span class="keyword">let</span> cookieParser = <span class="built_in">require</span>(<span class="string">'cookie-parser'</span>);</div><div class="line"><span class="keyword">let</span> cookieSession = <span class="built_in">require</span>(<span class="string">'cookie-session'</span>);</div><div class="line"><span class="keyword">let</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>);</div><div class="line"><span class="keyword">let</span> consolidate = <span class="built_in">require</span>(<span class="string">'consolidate'</span>); <span class="comment">//中间件，管理多个模板引擎</span></div><div class="line"><span class="keyword">let</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</div><div class="line"><span class="keyword">let</span> server = express();</div><div class="line">server.listen(<span class="number">8001</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">true<span class="built_in">console</span>.log(<span class="string">'server is running'</span>);</div><div class="line">&#125;);</div><div class="line">server.use(express.static(<span class="string">'./www'</span>));</div><div class="line">server.use(bodyParser.urlencoded(&#123;<span class="attr">limit</span>:<span class="number">5</span>*<span class="number">1024</span>&#125;));</div><div class="line"><span class="keyword">let</span> objMulter = multer(&#123;<span class="attr">dest</span>:<span class="string">'upload'</span>&#125;);</div><div class="line">server.use(objMulter.any());</div><div class="line">server.set(<span class="string">'views'</span>,<span class="string">'./views'</span>);<span class="comment">//设置模板引擎目录</span></div><div class="line">server.set(<span class="string">'view.engine'</span>,<span class="string">'html'</span>);<span class="comment">//设置输出类型</span></div><div class="line">server.engine(<span class="string">'html'</span>,consolidate.ejs);<span class="comment">//输出与模板匹配</span></div><div class="line"><span class="comment">//cookie session</span></div><div class="line">server.use(cookieParser());</div><div class="line"><span class="comment">// let arr=[];</span></div><div class="line"><span class="comment">// for(let i=0;i&lt;10000;i++)&#123;</span></div><div class="line"><span class="comment">//   arr.push('myse'+Math.random());</span></div><div class="line"><span class="comment">// &#125;</span></div><div class="line">server.use(cookieSession(&#123;</div><div class="line">  keys:[<span class="string">'aa'</span>,<span class="string">'bb'</span>],<span class="comment">//加密</span></div><div class="line">  name:<span class="string">'session'</span>,<span class="comment">//sessionkey为session</span></div><div class="line">  maxAge:<span class="number">1000</span>*<span class="number">10</span><span class="comment">//10秒后过期</span></div><div class="line">&#125;));</div><div class="line"><span class="comment">//创建数据库连接池</span></div><div class="line"><span class="keyword">let</span> db = mysql.createPool(&#123;</div><div class="line">truehost:<span class="string">'localhost'</span>,</div><div class="line">trueuser:<span class="string">'root'</span>,</div><div class="line">truepassword:<span class="string">'123456'</span>,</div><div class="line">truedatabase:<span class="string">'test'</span></div><div class="line">&#125;);</div><div class="line">server.use(<span class="string">'/'</span>,<span class="built_in">require</span>(<span class="string">'./router/home'</span>)(db))</div><div class="line">server.use(<span class="string">'/article'</span>,<span class="built_in">require</span>(<span class="string">'./router/article'</span>)(db));</div><div class="line">server.use(<span class="string">'/column'</span>,<span class="built_in">require</span>(<span class="string">'./router/column'</span>)(db));</div><div class="line">server.use(<span class="string">'/fllow'</span>,<span class="built_in">require</span>(<span class="string">'./router/fllow'</span>)(db));</div><div class="line">server.use(<span class="string">'/user'</span>,<span class="built_in">require</span>(<span class="string">'./router/user'</span>)(db));</div><div class="line">server.use(<span class="string">'/login'</span>,<span class="built_in">require</span>(<span class="string">'./router/login'</span>)(db));</div><div class="line">server.use(<span class="string">'/reg'</span>,<span class="built_in">require</span>(<span class="string">'./router/reg'</span>)(db));</div><div class="line"><span class="comment">//2.新建router文件</span></div><div class="line"><span class="comment">//在router文件中写各个服务模块</span></div><div class="line"><span class="comment">//`column模块`示例：</span></div><div class="line"><span class="keyword">let</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"><span class="built_in">module</span>.exports=<span class="function"><span class="keyword">function</span>(<span class="params">db</span>)</span>&#123;</div><div class="line">true<span class="keyword">let</span> router =express.Router(); </div><div class="line">truerouter.get(<span class="string">'/'</span>,(req,res)=&gt;&#123;</div><div class="line">truetrue<span class="keyword">let</span> sql = <span class="string">`select * from news`</span>;</div><div class="line">truetruedb.query(sql,(err,data)=&gt;&#123;</div><div class="line">truetruetrueres.render(<span class="string">'column_m.ejs'</span>,&#123;<span class="attr">news</span>:data&#125;);</div><div class="line">truetrue&#125;)</div><div class="line">true&#125;)</div><div class="line">true<span class="keyword">return</span> router;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
     </div>
 
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/nodejs-path模块/" class="archive-article-date">
-      <time datetime="2017-09-28T08:53:13.620Z" itemprop="datePublished">09-28</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/nodejs-path模块/">nodejs-path模块</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
+      
+      
+      <div class="clearfix"></div>
     </div>
-
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
   </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/ndoe.js/" class="archive-article-date">
-      <time datetime="2017-09-28T08:43:04.502Z" itemprop="datePublished">09-28</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/ndoe.js/">ndoe.js</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
-    </div>
 
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/mysql/" class="archive-article-date">
-      <time datetime="2017-09-28T07:40:24.993Z" itemprop="datePublished">09-28</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/mysql/">mysql</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
-    </div>
 
 
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/nodejs-fs模块/" class="archive-article-date">
-      <time datetime="2017-09-28T07:40:13.453Z" itemprop="datePublished">09-28</time>
-</a>
 
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/nodejs-fs模块/">nodejs-fs模块</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
-    </div>
-
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/npm/" class="archive-article-date">
-      <time datetime="2017-09-28T07:39:59.245Z" itemprop="datePublished">09-28</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/npm/">npm</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/mongoDB/" class="archive-article-date">
-      <time datetime="2017-09-28T07:39:48.884Z" itemprop="datePublished">09-28</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/mongoDB/">mongoDB</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
-    </div>
-
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/nodejs-url模块/" class="archive-article-date">
-      <time datetime="2017-09-28T07:39:33.360Z" itemprop="datePublished">09-28</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/nodejs-url模块/">nodejs-url模块</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
-    </div>
-
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/09/28/nodejs/脚手架/" class="archive-article-date">
-      <time datetime="2017-09-28T07:38:55.542Z" itemprop="datePublished">09-28</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/28/nodejs/脚手架/">脚手架</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/nodejs/">nodejs</a>
-    </div>
-
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
-  
-
-    
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/09/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/09/page/2/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
   
-
 </div>
       <footer id="footer">
     <div class="outer">
